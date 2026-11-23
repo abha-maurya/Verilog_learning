@@ -1,0 +1,36 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000026042566700 .scope module, "print_value" "print_value" 2 3;
+ .timescale -9 -12;
+v0000026042566890_0 .var "a", 0 0;
+v000002604256ed70_0 .var "byte", 7 0;
+v000002604256ee10_0 .var "nibble", 3 0;
+    .scope S_0000026042566700;
+T_0 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000026042566890_0, 0, 1;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v000002604256ee10_0, 0, 4;
+    %pushi/vec4 170, 0, 8;
+    %store/vec4 v000002604256ed70_0, 0, 8;
+    %vpi_call 2 15 "$display", "binary a = %b", v0000026042566890_0 {0 0 0};
+    %vpi_call 2 16 "$display", "binary nibble = %b", v000002604256ee10_0 {0 0 0};
+    %vpi_call 2 17 "$display", "binary byte = %b", v000002604256ed70_0 {0 0 0};
+    %vpi_call 2 19 "$display", "decimal nibble = %0d", v000002604256ee10_0 {0 0 0};
+    %vpi_call 2 20 "$display", "decimal byte = %0d", v000002604256ed70_0 {0 0 0};
+    %vpi_call 2 22 "$display", "hex byte = %h", v000002604256ed70_0 {0 0 0};
+    %vpi_call 2 24 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "tb_print_value.v";
